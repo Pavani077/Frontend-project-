@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: #ff7675; /* Soft Coral matching image */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center; /* Center navigation */
+    align-items: center;
+    position: relative;
+    height: 60px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.menu-icon {
+    position: absolute;
+    right: 2rem;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    height: 30px;
+    width: auto;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    height: calc(100vh - 60px); /* Adjust based on header height */
+    min-height: 500px;
+}
+
+.hero-content {
+    flex: 1;
+    background: linear-gradient(90deg, #fffac8 0%, #ffdad9 100%); /* Gradient Yellow to Pink */
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 3rem;
+    max-width: 90%;
+}
+
+.btn-primary {
+    background-color: #ff7675; /* Matching soft coral button */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 2px;
+}
+
+.hero-image {
+    flex: 1;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Promo Section */
+.promo-section {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #fffa65 0%, #ff9ff3 100%); /* Brighter Yellow to Pink */
+    padding: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    max-width: 600px;
+    height: 600px; /* Fixed height for the grid to keep aspect ratios */
+}
+
+/* Specific grid placement matching the image */
+/* 
+   Image 1 (Neon): Top Left
+   Image 2 (Street): Bottom Left
+   Image 3 (Food): Right (Spanning 2 rows) 
+*/
+
+.gallery-item {
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.item-2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.item-3 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+}
+
+.promo-content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.promo-content {
+    background-color: #ff4757;
+    padding: 3rem;
+    width: 80%;
+    max-width: 500px;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.sub-title {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.promo-content h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero, .promo-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .gallery-grid {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+    
+    .promo-content-wrapper {
+        padding-left: 0;
+        margin-top: 2rem;
+        width: 100%;
+    }
+    
+    .promo-content {
+        width: 100%;
+    }
+    
+    .nav-links {
+        display: none; /* Hide nav links on mobile for simplicity */
+    }
+}
